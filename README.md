@@ -1,25 +1,68 @@
-# Mini-WebServer
-DePaul University CSC 435
+## MiniWebServer - A Simple HTTP Server in Java
+
+This project implements a MiniWebServer to demonstrate basic HTTP message handling between a web client (browser) and a web server. The server is capable of processing HTTP requests and handling form data sent via GET requests.
+
+# Project Overview:
+
+• MiniWebserver.java: The main file that implements the web server. It listens for connections on port 2540 and responds to HTTP requests from a web client, such as a browser or telnet client.
+
+• WebAdd.html: A simple HTML form that sends form data (name and numbers) to the MiniWebServer for processing. The form data is passed to the server as query parameters in the URL.
+
+• The goal of this project is to help students understand how a basic web server processes HTTP requests and interacts with clients, as well as familiarize them with query strings and name/value pairs sent via forms.
 
 
-Grading:
-We will compile and run your MiniWebserver.java program and point to it at http://localhost:2540 from our own copy of WebAdd.html using Firefox.
-We will check for plagiarism, and read your code, including the required comments.
+# Key Features:
 
-Assignment:
-This mini-assignment is to familiarize students with the HTTP messages that go back and forth between a web client (browser) and a web server. This is a small assignment. Pedagogical, explanatory comments are required in the code.
-During the course of your program development, engage in scholarly discussions of these webserver techniques with your peers on the D2L forums. Save your postings into MiniWebPostings.txt (or .html, or .docx). Two postings are required: questions, answers, comments, annotated links, etc. Submit to D2L (together with .java code), and ALSO concatenate with your .java code for submission to the TII link.
-Background reading: Read the full MyWebserver assignment page for background and detailed instructions. I will feel free to ask questions on this background material on the midterm and final exams. Do not write the full MyWebserver code this quarter. Informational only.
-Run MyListener.java by pointing a web browser to the socket it presents on localhost (http://localhost:2540/abc) and viewing what the browser is sending. MyListener will be waiting for connections at port 2540.
-Run the MyTelnetClient.java program and use it to get a response from a webserver. Connect to a webserver. Submit a web request manually by typing the lines of the request into the console. Then, see what you get back from the webserver. There are sample instructions in the comments of the program. Be careful: TWO carriage-return/linefeeds [blank lines] followed by stop at the end are required. Note that you might only get back an error from the webserver, but if so, this is still a success: you got back a valid response!
-Run WebResponse.java by pointing a web browser to it and viewing the response that is sent.
-Copy WebResponse.java to MiniWebserver.java.
-Add the required HEADER to the Java file. Complete the minor modification tasks specified in the checklist.
-Make sure that MiniWebserver.java works with WebAdd.html. (FORM input)
-Enter different names and different numbers to see how these are captured in the query string . This is, in fact, just a string that can be read and manipulated in your java server program. This is how form data is sent to webservers as name/value pairs.
-Note that the query string appears after a question-mark, name/value pairs are delimited by ampersands (&) and names are linked to their values by equal signs within the name/value pairs.
-Answer the questions as comments in your MiniWebserver.java source code.
-Submit your .java code to D2L before the server closing deadline.
-In the usual way, concatenate the same MiniWebserver.java code with your MinWebPostings file as .docx or .txt (NOT .java) to the TII link for plagiarism checking. There will be high overlap because there is little code for you to write, but your own comments will be original and your postings will be original. You must be under the maximum overlap limit for us to grade your assignment.
-For fun, point your MyTelnetClient to port 2540 on localhost so you can talk from the telnet client to your own MiniWebServer listener manually.
-Complete the checklist and upload it to D2L along with your WebAdd.html form (given to you), and your commented MiniWebserver.java program. NEVER make false claims on your checklist. Done!
+• HTTP Request Handling: The server processes HTTP GET requests and sends back responses based on the request.
+
+• Query String Parsing: Form data sent via WebAdd.html is processed as a query string, with name/value pairs delimited by ampersands (&).
+
+• Form Interaction: The project includes an HTML form that allows users to input data (names and numbers), which is then sent to the server and displayed in the browser.
+
+• Console Interaction: In addition to using a web browser, a telnet client can be used to manually submit web requests and see server responses.
+
+# Technical Details:
+
+• Developed in Java, this project makes use of basic sockets to listen for connections and respond to HTTP requests.
+
+• The server runs on localhost:2540, making it accessible via a web browser or a telnet client.
+
+• GET Request Handling: The server processes GET requests and extracts the query string from the request URL to display the form data in the response.
+
+• The query string is parsed and converted into key-value pairs that are processed by the server.
+
+# How to Run the Project:
+
+• Compile the Java file using: javac MiniWebserver.java
+
+• Run the server: Start the MiniWebServer by executing: java MiniWebserver
+
+• Access the server via browser: Open a web browser (preferably Firefox) and navigate to: http://localhost:2540
+
+• Submit form data:
+ Use the WebAdd.html form to input different names and numbers.
+ The form data is sent to the server as a query string, and the server will respond by displaying the processed data.
+
+• Using Telnet for manual requests: Open a terminal and run: telnet localhost 2540
+
+• Manually submit an HTTP request by typing:
+ GET /?person=John&num1=4&num2=5 HTTP/1.1
+ Host: localhost
+(Make sure to include two carriage returns after the request.)
+
+• Check the server response: The server will respond with the processed form data, either via the web browser or telnet client.
+
+# Custom Modifications:
+
+• Added comments throughout MiniWebserver.java explaining how the server processes requests and responds with the appropriate data.
+
+• Enhanced the error handling and response formatting to provide better feedback when invalid or incomplete requests are submitted.
+
+Learning Outcomes:
+
+• By completing this project, I gained hands-on experience in:
+
+• Understanding basic HTTP message exchanges between a web client and server.
+• Handling GET requests and form data in a Java-based server.
+• Using sockets to manage client-server communication.
+• Exploring how form data is passed as query strings and processed in server-side code.
