@@ -58,7 +58,7 @@ This project implements a MiniWebServer to demonstrate basic HTTP message handli
 
 • Enhanced the error handling and response formatting to provide better feedback when invalid or incomplete requests are submitted.
 
-Learning Outcomes:
+# Learning Outcomes:
 
 • By completing this project, I gained hands-on experience in:
 
